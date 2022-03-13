@@ -2,13 +2,15 @@
 Abordagem prática do uso do SQL baseados em exercícios práticos com banco de dados reais para verificação de conceitos aplicados em desafios empresariais.
 
 # Tópicos 
-## SQLite
+- SQLite
+- Select
+- Where 
+- Group By e Order By
+- Instruções Case
+- Join
+- Design de Banco de Dados
+- Gerenciando Dados
 
-## Select
-
-## Where 
-
-## Group By e Order By
-
-## Instruções Case
+# Referências
+Nield, Thomas. Introdução à linguagem SQL: abordagem prática para iniciantes. Novatec: São Paulo, 2016. 
 
