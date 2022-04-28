@@ -1,0 +1,17 @@
+/*WHERE COM BOOLEANOS*/
+
+SELECT * FROM station_data
+WHERE tornado = 1 AND hail = 1; 
+
+
+SELECT * FROM station_data
+WHERE tornado AND hail;
+
+
+SELECT * FROM station_data
+WHERE tornado = 0 AND hail = 1;
+
+
+SELECT * FROM station_data
+WHERE NOT tornado AND hail;
+

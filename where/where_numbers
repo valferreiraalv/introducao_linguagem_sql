@@ -1,0 +1,17 @@
+/*WHERE COM NÚMEROS*/
+
+SELECT * FROM station_data
+WHERE year = 2010;
+
+
+SELECT * FROM station_data
+WHERE year != 2010;
+
+
+SELECT * FROM station_data
+WHERE year <> 2010;
+
+SELECT * FROM station_data
+WHERE year BETWEEN 2005 and 2010 
+
+
