@@ -1,0 +1,7 @@
+/*ORDER BY AND GROUP BY */
+
+/*resultados distintos a partir de uma consulta*/
+SELECT DISTINCT station_number FROM station_data 
+
+/*resultados distintos para mais de uma coluna*/
+SELECT DISTINCT station_number, year FROM station_data

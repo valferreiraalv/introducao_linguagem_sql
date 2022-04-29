@@ -1,0 +1,9 @@
+/*ORDER BY AND GROUP BY */
+
+/*filtrando registros de acordo com um valor agregado*/ 
+SELECT year,
+SUM(precipitation) as total_precipitation
+FROM station_data
+GROUP BY year 
+HAVING total_precipitation > 30
+

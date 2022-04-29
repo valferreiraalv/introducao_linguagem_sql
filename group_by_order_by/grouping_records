@@ -1,0 +1,28 @@
+/*ORDER BY AND GROUP BY */
+
+/*contando registro de uma tabela*/
+SELECT COUNT(*) AS record_count FROM station_data;
+
+SELECT COUNT(*) AS record_count FROM station_data
+WHERE tornado = 1;
+
+/*separar a contagem por ano*/
+SELECT COUNT(*) AS record_count FROM station_data
+WHERE tornado = 1
+GROUP BY year;
+
+/*diferença de tornados por ano*/
+SELECT year, COUNT(*) AS record_count FROM station_data
+WHERE tornado = 1
+GROUP BY year;
+
+/*fatiando os dados considerando mais de um campo*/
+SELECT year, month, COUNT(*) AS record_count FROM station_data
+WHERE tornado = 1
+GROUP BY year, month
+
+/*usando posições ordinais para especificar colunas em group by*/
+SELECT year, month, COUNT(*) AS record_count FROM station_data
+WHERE tornado = 1
+GROUP BY 1, 2
+

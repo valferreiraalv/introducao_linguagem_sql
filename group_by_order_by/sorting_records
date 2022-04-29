@@ -1,0 +1,16 @@
+/*ORDER BY AND GROUP BY */
+
+/*classificação por ano e mês*/
+SELECT year, month, COUNT(*) AS record_count FROM station_data
+WHERE tornado = 1
+GROUP BY year, month 
+ORDER BY year, month
+
+/*ordenando dados de forma crescente*/
+SELECT year, month, COUNT(*) AS record_count FROM station_data
+WHERE tornado = 1
+GROUP BY year, month 
+ORDER BY year DESC, month
+
+
+
