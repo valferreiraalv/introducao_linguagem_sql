@@ -1,0 +1,28 @@
+/*CASE INSTRUCTIONS */
+
+/*the case instruction*/
+SELECT report_code, year, month, day, wind_speed, 
+
+CASE
+    WHEN wind_speed >= 40 THEN 'HIGN'
+    WHEN wind_speed >= 30 AND wind_speed < 40 THEN 'MODERATE'
+    ELSE 'LOW'
+END as wind_severity
+
+FROM station_data
+
+
+/*efficient query*/
+SELECT report_code, year, month, day, wind_speed, 
+
+CASE
+    WHEN wind_speed >= 40 THEN 'HIGN'
+    WHEN wind_speed >= 30 THEN 'MODERATE'
+    ELSE 'LOW'
+END as wind_severity
+
+FROM station_data
+
+
+
+

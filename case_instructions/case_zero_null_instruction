@@ -1,0 +1,54 @@
+/*CASE INSTRUCTIONS */
+
+/*tornado precipitation*/
+SELECT year, month,
+SUM(precipitation) as tornado_precipitation
+FROM station_data
+WHERE tornado = 1 
+GROUP BY year, month 
+
+
+/*non tornado precipitation*/
+SELECT year, month,
+SUM(precipitation) as non_tornado_precipitation
+FROM station_data
+WHERE tornado = 0
+GROUP BY year, month 
+
+
+/*just one query*/
+SELECT year, month,
+SUM(CASE WHEN tornado = 1 THEN precipitation ELSE 0 END) as 
+    tornado_precipitation,
+    
+SUM(CASE WHEN tornado = 0 THEN precipitation ELSE 0 END) as
+    non_tornado_precipitation
+    
+FROM station_data    
+GROUP BY year, month 
+
+
+/*maximum precipitation with and without tornado per year*/
+SELECT year,
+MAX(CASE WHEN tornado = 0 THEN precipitation ELSE NULL END)
+    as max_non_tornado_precipitation,
+    
+MAX(CASE WHEN tornado = 1 THEN precipitation ELSE NULL END)
+    as max_tornado_precipitation
+
+FROM station_data    
+GROUP BY year
+
+
+/*calculate average temperatures per month after the year 2000*/
+SELECT month,
+
+AVG(CASE WHEN rain OR hail THEN temperature ELSE NULL END)
+    AS avg_precipitation_temp,
+    
+AVG(CASE WHEN NOT (rain OR hail) THEN temperature ELSE NULL END)
+    AS avg_non_precipitation_temp
+    
+FROM STATION_DATA
+WHERE year > 2000
+GROUP BY month
