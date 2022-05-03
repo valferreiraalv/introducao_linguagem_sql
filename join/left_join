@@ -1,0 +1,29 @@
+/*JOIN*/
+
+/*left join*/
+/*neste caso os clientes que não tem pedidos aparecem na query mas com os campos de pedidos nulos*/
+SELECT CUSTOMER.CUSTOMER_ID,
+NAME,
+STREET_ADDRESS,
+CITY,
+STATE,
+ZIP,
+ORDER_DATE,
+SHIP_DATE,
+ORDER_ID,
+PRODUCT_ID,
+ORDER_QTY
+
+FROM CUSTOMER LEFT JOIN CUSTOMER_ORDER
+ON CUSTOMER.CUSTOMER_ID = CUSTOMER_ORDER.CUSTOMER_ID
+
+
+/*aplicação da instrução where para procurar valores nulos que sejam resultado do left join*/
+SELECT
+CUSTOMER.CUSTOMER_ID,
+NAME AS CUSTOMER_NAME
+
+FROM CUSTOMER LEFT JOIN CUSTOMER_ORDER
+ON CUSTOMER.CUSTOMER_ID = CUSTOMER_ORDER.CUSTOMER_ID
+
+WHERE ORDER_ID IS NULL
